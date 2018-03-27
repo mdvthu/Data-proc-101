@@ -20,6 +20,9 @@ print("")
 # complie a regular expression
 r = re.compile("^" + postcode, re.IGNORECASE)
 
+for i in processed:
+    print(i)
+
 # go through each line in the data
 for line in processed:
     # if the pattern matches, print the hospital and postcode, then a newline
