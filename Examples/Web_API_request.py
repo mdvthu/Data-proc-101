@@ -6,7 +6,7 @@
 import requests
 
 # The name of the file to download. This can be any type of file
-url = "https://mdvthu.com/files/example_text_file.txt"
+url = "https://mdvthu.com/files/text.txt"
 
 # Go off to the internet and download the specified file
 print("Downloading " + url + " from the internet...")
