@@ -2,4 +2,3 @@
 
 # Print some text to the screen
 print("Hello world!")
-

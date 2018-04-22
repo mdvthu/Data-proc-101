@@ -8,12 +8,13 @@ import re
 url = "http://data.gov.uk/data/resource/nhschoices/Hospital.csv"
 result = requests.get(url)
 
-# break the result in to lines (\r\n indicates the end of a line in our CSV file)
+# break the result in to lines
+# (\r\n indicates the end of a line in our CSV file)
 processed = result.text.split('\r\n')
 # split each line at the tab character (\t)
-processed[:] = [ j.split('\t') for j in processed ]
+processed[:] = [j.split('\t') for j in processed]
 # Remove any empty lines
-processed[:] = [ x for x in processed if len(x) > 1 ]
+processed[:] = [x for x in processed if len(x) > 1]
 
 # Collect some user input and print a new line
 # before outputting the results
@@ -36,4 +37,3 @@ for line in processed:
         print(line[7])
         print(line[13])
         print("")
-

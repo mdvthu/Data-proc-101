@@ -8,4 +8,3 @@ name = input()
 
 # Print the output
 print("Hello " + name)
-
