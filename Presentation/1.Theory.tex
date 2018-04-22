@@ -47,7 +47,7 @@
 \setbeamertemplate{headline}
 {%
 	\begin{picture}(0,0)
-		\put(314,-50){%
+		\put(314,-30){%
 			\pgfuseimage{phntlogo}
 		}
 		\put(20,-55){%
@@ -147,7 +147,7 @@
 		    \item get a new angle on a problem
 			    \begin{itemize}
 				    \item some simple problems are impossible without very basic programming skills
-				    \item master your research data
+				    \item master your research and audit data
 			    \end{itemize}
 		    \item useful in understanding and implementing emerging radiology technologies
 			    \begin{itemize}
@@ -188,7 +188,7 @@
 	    \frametitle{Definitions: Python}
 	    \framesubtitle{``The Python philosophy rejects exuberant syntax in favor of a simpler, less-cluttered grammar.''}
 	    \begin{itemize}
-		    \item easy to learn: based on the \textit{ABC language} --- a research project 
+		    \item based on the \textit{ABC language} --- optimised for ease of learning
 			    \begin{itemize}
 				    \item ``Simplicity is the ultimate sophistication'' \tiny{--- William Gaddis}
 			    \end{itemize}
@@ -264,23 +264,26 @@ print( *objects, sep=' ', end='\n',
     \end{frame}
 
 
-\defverbatim[colored]\lstB{
+\defverbatim[colored]\lstC{
 \begin{lstlisting}[language=Python,basicstyle=\ttfamily,keywordstyle=\color{red}]
-print( *objects, sep=' ', end='\n',
-	file=sys.stdout, flush=False)
+def test_function():
+	'''Runs a test.'''
+	print("Testing... 1, 2, 3")
+
+# run the test
+test_function()
 \end{lstlisting}
 
 }
 
     \begin{frame}
-	    \frametitle{Basic language syntax: comments and strings}
-	    \framesubtitle{your first program}
+	    \frametitle{Basic language syntax: comments and docstrings}
+	    \framesubtitle{ensure maximum readibility... for others (and yourself)}
 	    \begin{itemize}
-		    \item the interpreter: python3
-		    \item saving the file and running as a script: the \textit{``shebang''}
-		    \item the print function: prints objects to a specified place (in our case, the screen \textit{stdout})
+		    \item a \# character makes the interpreter ignore the rest of the line
+		    \item at the start of a function definition, a \textit{docstring} describes the function
 	    \end{itemize}
-	    \lstB
+	    \lstC
     \end{frame}
 
 
@@ -288,7 +291,7 @@ print( *objects, sep=' ', end='\n',
 
 
 
-\defverbatim[colored]\lstC{
+\defverbatim[colored]\lstD{
 \begin{lstlisting}[language=Python,basicstyle=\ttfamily,keywordstyle=\color{red}]
 my_var = "value"
 denominator = 7 
@@ -302,7 +305,7 @@ GLOBAL_VARIABLES = "all caps"
 	    \frametitle{Basic language syntax: variables \& data}
 	    \framesubtitle{data are the fundamental building blocks of any program}
 	    \begin{itemize}
-		    \item allows storage of data by a name
+		    \item variables allow storage of data by a name
 		    \item be careful how you name them!
 			    \begin{itemize}
 				    \item clear and consise names: easy to read, descriptive
@@ -311,16 +314,16 @@ GLOBAL_VARIABLES = "all caps"
 					    Uppercase global variable names.
 			    \end{itemize}
 	    \end{itemize}
-	    \lstC
+	    \lstD
     \end{frame}
 
-\defverbatim[colored]\lstD{
+\defverbatim[colored]\lstE{
 \begin{lstlisting}[language=Python,basicstyle=\ttfamily,keywordstyle=\color{red}]
 body_parts = ["hand", "elbow", "shoulder"]
 months = ("Jan", "Feb", "Mar", ...) 
 empty_list = list()
 
->>> print(months[0])
+>>> print(months[0]) # 0-indexed
 Jan
 \end{lstlisting}
 
@@ -331,14 +334,37 @@ Jan
 	    \frametitle{Basic language syntax: lists, iterables}
 	    \framesubtitle{a list is a type of sequence}
 	    \begin{itemize}
-		    \item an iterable is an object with multiple elements: 0-indexed
+		    \item an iterable is an object with multiple elements:
 			    \begin{itemize}
 				    \item including \textit{lists}, \textit{tuples}, \textit{sets}
 			    \end{itemize}
 		    \item accessing multiple times can allow you to perform an operation on every element
 	    \end{itemize}
-	    \lstD
+	    \lstE
     \end{frame}
+
+\defverbatim[colored]\lstF{
+\begin{lstlisting}[language=Python,basicstyle=\ttfamily,keywordstyle=\color{red}]
+>>> 1 == 1
+True
+>>> 10 <= 0
+False
+\end{lstlisting}
+
+}
+
+    \begin{frame}
+	    \frametitle{Basic language syntax: Boolean statements}
+	    \framesubtitle{True, False, 1, 0}
+	    \begin{itemize}
+		    \item Boolean algebra named after George Boole, 1815 -- 1864
+		    \item the lowest construct that a computer understands
+		    \item the return value from a test statement is either True or False
+	    \end{itemize}
+	    \lstF
+
+    \end{frame}
+
 
 \defverbatim[colored]\lstI{
 \begin{lstlisting}[language=Python,basicstyle=\ttfamily,keywordstyle=\color{red}]
@@ -349,8 +375,8 @@ elif <another statement>:
 else:
 	<more code>
 
-<statement> == True // activates 
-<statement> == False // skips
+<statement> == True # activates 
+<statement> == False # skips
 \end{lstlisting}
 
 }
@@ -360,7 +386,7 @@ else:
 	    \frametitle{Basic language syntax: conditional statements}
 	    \framesubtitle{perform a different action depending on the result of a test}
 	    \begin{itemize}
-		    \item control which part of the program is activated 
+		    \item control which part of the program is activated, depending on a test 
 	    \end{itemize}
 	    \lstI
 
@@ -392,91 +418,162 @@ while <condition>:
 	    \lstJ
     \end{frame}
 
+
+    \defverbatim[colored]\lstK{
+\begin{lstlisting}[language=Python,basicstyle=\ttfamily,keywordstyle=\color{red}]
+# get some standard input
+user_input = input()
+
+# prints all the items in the argument vector
+import sys
+for item in sys.argv:
+	print(item)
+\end{lstlisting}
+
+}
+
+
     \begin{frame}
 	    \frametitle{Basic language syntax: user input}
 	    \framesubtitle{store data to operate on}
+	    How do I get data in to my program?
 	    \begin{itemize}
-		    \item \textit{stdin}
+		    \item \textit{stdin}: ``standard input''
 		    \item \textit{args}: command line arguments
 	    \end{itemize}
+	   \lstK
     \end{frame}
 
+   \defverbatim[colored]\lstL{
+\begin{lstlisting}[language=Python,basicstyle=\ttfamily,keywordstyle=\color{red}]
+# use the os module to find all the files
+import os
+files = os.walk('.')
+\end{lstlisting}
+
+}
+
+   \defverbatim[colored]\lstM{
+\begin{lstlisting}[language=Bash,basicstyle=\ttfamily,keywordstyle=\color{red}]
+# install a new python module
+$ pip3 install tensorflow
+\end{lstlisting}
+
+}
 
     \begin{frame}
 	    \frametitle{Basic language syntax: using external modules}
 	    \framesubtitle{add features to your program}
 	    \begin{itemize}
-		    \item allows you to take advantage of community contributed code
-		    \item pip: tool to collect and install external modules from internet repository
+		    \item allows you to take advantage of built in and community contributed external code
+		    \item pip: tool to collect and install external modules from internet repository --- minimal effort required
 	    \end{itemize}
+	    \lstL
+	    \lstM
     \end{frame}
 
     \begin{frame}
 	    \frametitle{Designing your program: drawing board}
 	    \framesubtitle{think about the process}
-		    ``Computer science is no more about computers than astronomy is about telescopes.'' --- Dijkstra
+	    {
+	    \scriptsize
+		    ``Computer science is no more about computers than astronomy is about telescopes.''
+		    \newline
+		    -- Dijkstra
+		    }
 	    \begin{itemize}
 		    \item paper and pen
 		    \item get the steps right before you start and the rest will be easy
+		    \item the programming language syntax is of secondary importance
 	    \end{itemize}
     \end{frame}
 
     \begin{frame}
 	    \frametitle{Possibilities: file renaming}
 	    \framesubtitle{Automate a boring task}
-	    \begin{itemize}
-		    \item 
-	    \end{itemize}
+	    For example, your digital camera has produced a directory of files named \textbf{IMG\_3624.JPG} etc...
+	    You would prefer them named Greece\-2018\_xxx.jpg
+	    \newline
+	    Think about the steps that would be required for this:
+	    \begin{enumerate}
+		    \item select the appropriate directory location
+			    \begin{itemize}
+				    \item either hard-coded or user-selectable
+				    \item can you trust the user to enter a valid location?
+			    \end{itemize}
+		    \item build a list of all the items you want renamed
+		    \item go through each item, performing the rename operation
+			    \begin{itemize}
+				    \item format for renaming? a counter might be needed
+			    \end{itemize}
+		    \item exit
+	    \end{enumerate}
     \end{frame}
 
     \begin{frame}
 	    \frametitle{Possibilities: remove all duplicate patients from a spreadsheet}
 	    \framesubtitle{Automate a boring task}
-	    \begin{itemize}
-		    \item 
-	    \end{itemize}
+	    \begin{enumerate}
+		    \item Precisely define the task: how do you define a duplicate row?
+		    \item import the data to Python using the help of an external module
+			    \begin{itemize}
+				    \item method depends on the format of the data -- \textit{Excel}, \textit{comma separated value file}
+			    \end{itemize}
+		    \item loop through all the records removing those that fit (or don't fit) the criteria
+		    \item write to a new file
+		    \item exit
+	    \end{enumerate}
     \end{frame}
 
     \begin{frame}
 	    \frametitle{Possibilities: find all phone numbers in a text document}
 	    \framesubtitle{Regular expressions}
-	    \begin{itemize}
-		    \item 
-	    \end{itemize}
+	    \begin{enumerate}
+		    \item What does a phone number look like?  
+			    \begin{itemize}
+				    \item country code [optional], area code, number
+				    \item may include dashes or spaces
+			    \end{itemize}
+		    \item Design a pattern (\textit{regular expression}) that fits the above
+		    \item Test it, looking for false positives and false negatives
+	    \end{enumerate}
     \end{frame}
 
-
-    \begin{frame}
-	    \frametitle{Possibilities: recognise the type of flower in an image}
-	    \framesubtitle{Tensorflow}
-	    \begin{itemize}
-		    \item 
-	    \end{itemize}
-    \end{frame}
 
     \begin{frame}
 	    \frametitle{Modules: useful extensions}
 	    \framesubtitle{A few selected modules out of hundreds}
 	    \begin{itemize}
-		    \item Tensorflow
-		    \item NLTK
-		    \item Pandas and numpy
-		    \item Requests
-		    \item pygtk
-		    \item scrapy
+		    \item \textit{Tensorflow}: open source machine learning library from Google
+		    \item \textit{Pandas, numpy}: data analysis toolkits
+		    \item \textit{Requests}: allows you to get webpages and text from the web into your program
+		    \item \textit{Scrapy}: scrape data from the web
+		    \item \textit{wxpython}: build a graphical program
 	    \end{itemize}
     \end{frame}
 
 
 
     \begin{frame}
-	    \frametitle{Resources: free tutorials}
+	    \frametitle{Resources: books}
 	    \framesubtitle{Learning resources available on the internet}
 	    \begin{itemize}
-		    \item 
-		    \item \textit{massive open online courses}
+		    \item Automate the boring stuff with Python: \url{https://automatetheboringstuff.com/}
+		    \item Another free online tutorial: \url{https://python-textbok.readthedocs.io/en/1.0/}
+	    \end{itemize}
+    \end{frame}
+
+
+    \begin{frame}
+	    \frametitle{Resources: interactive tutorials}
+	    \framesubtitle{Learning resources available on the internet}
+	    \begin{itemize}
+		    \item Massive open online courses: some free, some cost
 			    \begin{itemize}
-				    \item EdX, Coursera
+				    \item EdX: \url{https://www.edx.org/course?search_query=python}
+				    \item Coursera: \url{https://www.coursera.org/courses?languages=en&query=python&userQuery=python}
+				    \item Udacity: \url{https://eu.udacity.com/}
+				    \item udemy \url{https://www.udemy.com/}
 			    \end{itemize}
 	    \end{itemize}
     \end{frame}
@@ -487,12 +584,20 @@ while <condition>:
 	    \begin{itemize}
 		    \item coding websites
 			    \begin{itemize}
-				    \item Hacker Rank
+				    \item \url{https://www.hackerrank.com/domains/python}
+				    \item \url{https://www.codecademy.com/tracks/python}
 			    \end{itemize}
 		    \item open access data
-		    \item contributing to an open source project
 			    \begin{itemize}
-				    \item Horos, Orthanc, OpenCV, Python
+				    \item \url{https://data.gov.uk/}
+			    \end{itemize}
+		    \item read other code on \url{https://github.com}
+		    \item contribute to an open source project
+			    \begin{itemize}
+				    \item Horos
+				    \item Orthanc
+				    \item OpenCV
+				    \item Python
 			    \end{itemize}
 	    \end{itemize}
     \end{frame}
@@ -501,11 +606,29 @@ while <condition>:
 	    \frametitle{Resources: getting help}
 	    \framesubtitle{Help from the community}
 	    \begin{itemize}
-		    \item Stackoverflow
+		    \item Stackoverflow: \url{https://stackoverflow.com/tags/python/info}
 		    \item Internet relay chat: \#python on irc.freenode.net
-		    \item Mailing lists:
+		    \item Mailing lists: \url{https://www.python.org/community/lists/}
 	    \end{itemize}
     \end{frame}
+   \begin{frame}
+	    \frametitle{Summary}
+	    \framesubtitle{Topics covered}
+	    \begin{itemize}
+		    \item basic definitions and background
+		    \item language syntax
+			    \begin{itemize}
+				    \item variables
+				    \item control structures
+				    \item user input
+			    \end{itemize}
+		    \item program design
+		    \item some uses
+		    \item help and resources
+	    \end{itemize}
+    \end{frame}
+
+
 
 
 \end{document}
