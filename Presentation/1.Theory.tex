@@ -1,0 +1,421 @@
+%% If you have any problems using this template, please contact the author: %%
+%% timhosgood@gmail.com %%
+
+\documentclass{beamer}
+\usepackage[utf8]{inputenc}
+\usepackage{charter}
+\usepackage{tikz}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{epigraph}
+\usepackage{trace}
+
+\usepackage{listings}
+
+%% Title slide formatting %%
+
+\pgfdeclareimage[width=\paperwidth]{titlebackground}{images/title-slide-background.png}
+\setbeamerfont{subtitle}{size=\tiny}
+\setbeamertemplate{title page}{
+	\begin{picture}(0,0)
+		\put(-28.5,-163){%
+			\pgfuseimage{titlebackground}
+		}
+		\put(0,-75){%
+			\begin{minipage}[b][4.5cm][t]{0.5\textwidth}
+				\color{black}
+				\usebeamerfont{title}
+				{\inserttitle\\[0.9cm]}
+				\usebeamerfont{subtitle}
+				{\insertauthor\par}
+				{\insertinstitute\\[0.3cm]}
+				{\insertdate}
+			\end{minipage}
+		}
+	\end{picture}
+}
+
+
+
+%% General slide formatting %%
+
+\definecolor{nhsdarkblue}{RGB}{0,48,135}
+
+\pgfdeclareimage[width=1.4cm]{phntlogo}{images/phnt-logo.png}
+
+\setbeamertemplate{headline}
+{%
+	\begin{picture}(0,0)
+		\put(314,-50){%
+			\pgfuseimage{phntlogo}
+		}
+		\put(20,-55){%
+			\rule{320pt}{0.4pt}
+		}
+	\end{picture}
+}
+
+\setbeamertemplate{frametitle}
+{%
+	\begin{picture}(0,0)
+		\put(-8,-10){%
+			\normalsize\color{nhsdarkblue}\insertframetitle
+		}
+		\put(-7,-20){%
+			\tiny\color{nhsdarkblue}\insertframesubtitle
+		}
+	\end{picture}
+}
+
+\setbeamertemplate{footline}
+{%
+	\begin{picture}(0,0)
+		\put(20,30){%
+			\rule{320pt}{0.4pt}
+		}
+		\put(100,14){%
+			\color{nhsdarkblue}\insertshortdate
+		}
+		\put(160,14){%
+			\color{nhsdarkblue}\insertshorttitle
+		}
+		\put(337,14){%
+			\color{nhsdarkblue}\insertpagenumber
+		}
+	\end{picture}%
+}
+
+
+
+%% Information (author, title, etc.) %%
+
+\title[Programming workshop]{Programming workshop: a brief introduction}
+
+\author{
+	\sc{Mark Thurston}\\
+    \textit{Radiology Registrar}
+} 
+\institute{
+	\textit{Peninsula Radiology Academy}\\
+    \textit{Plymouth}
+}
+\date[April 2018]{An introduction to automation with Python} % short date for footer
+
+
+
+%% Content of slides %%
+
+\begin{document}
+
+    \begin{frame}[plain]
+	    \titlepage
+    \end{frame}
+
+
+    \begin{frame}
+	    \frametitle{Aims and objectives}
+	    \framesubtitle{By the end of this session, you will be able to:}
+
+	    \begin{itemize}
+		    \item Part 1: Theory
+			    \begin{itemize}
+				    \item understand basic terms
+				    \item have a good idea of some tasks that are possible
+				    \item know where to learn more, if you are interested
+			    \end{itemize}
+	    \end{itemize}
+	    \begin{itemize}
+		    \item Part 2: Practice
+			    \begin{itemize}
+				    \item set up a Python environment
+				    \item run some pre-written example programs
+				    \item Write your own simple example programs
+			    \end{itemize}
+	    \end{itemize}
+	    \begin{itemize}
+		    \item ask questions at any point if unclear
+	    \end{itemize}
+    \end{frame}
+    %
+
+    \begin{frame}
+	    \frametitle{Why?}
+	    \framesubtitle{how are these skills useful or relevant to me?}
+	    \begin{itemize}
+		    \item make your life easier: automate repetitive and boring tasks
+		    \item get a new angle on a problem
+			    \begin{itemize}
+				    \item some simple problems are impossible without very basic programming skills
+				    \item master your research data
+			    \end{itemize}
+		    \item useful in understanding and implementing emerginig radiological technologies
+			    \begin{itemize}
+				    \item AI, radiomics
+				    \item knowledge enables you to navigate the hype -- useful at conferences and as a consultant
+			    \end{itemize}
+		    \item interesting and fun :) -- a huge field if you enjoy learning new things
+	    \end{itemize}
+    \end{frame}
+
+
+    \begin{frame}
+	    \frametitle{Definitions: programming language}
+	    \framesubtitle{``formal language that specifies a set of instructions that can be used to produce various kinds of output''}
+	    \begin{itemize}
+		    \item like any language:
+			    \begin{itemize}
+				    \item spelling
+				    \item grammatical rules
+				    \item common useage
+				    \item skill level -- basic to mastery -- the basics can still be put to very good use, mastery may take a lifetime
+			    \end{itemize}
+		    \item categorisation
+			    \begin{itemize}
+				    \item high level (Python, Java, etc) vs. lower level (C, assembly) vs. low level (machine code)
+				    \item by programming paradigm: imperitive (procedural, object orientated), declarative (functional, logical), symbolic
+			    \end{itemize} 
+	    \end{itemize}
+    \end{frame}
+
+    \begin{frame}
+	    \frametitle{Definitions: Python}
+	    \framesubtitle{``The Python philosophy rejects exuberant syntax in favor of a simpler, less-cluttered grammar.''}
+	    \begin{itemize}
+		    \item easy to learn: based on the ``ABC'' language - a research project 
+			    \begin{itemize}
+				    \item ``Simplicity is the ultimate sophistication'' --- William Gaddis
+			    \end{itemize}
+		    \item open source
+		    \item massive community
+			    \begin{itemize}
+				    \item loads of extra functionality available as modules
+				    \item data processing, artificial intelligence, image recognition
+				    \item help is easily available online for free if you get stuck
+			    \end{itemize}
+	    \end{itemize}
+    \end{frame}
+
+    \begin{frame}
+	    \frametitle{Definitions: abstraction}
+	    \framesubtitle{``Ignore the characteristics that we don't need in order to concentrate on those that we do.''}
+	    \begin{itemize}
+		    \item in general:
+			    \begin{itemize}
+				    \item Divide a programming problem into simpler, analogous pieces
+				    \item Solve the problem by combining solutions to simpler pieces
+			    \end{itemize}
+		    \item Application Programming Interface (API)
+			    \begin{itemize}
+				    \item a set of clearly defined methods of communication between various software components
+			    \end{itemize}
+	    \end{itemize}
+    \end{frame}
+
+
+    \begin{frame}
+	    \frametitle{Basic language syntax: hello world}
+	    \framesubtitle{your first program}
+
+	    ``The only way to learn a new programming language is by writing programs in it. The first program to write is the same for all languages:
+	    Print the words: \textit{hello, world}
+	    ...  With these mechanical details mastered, everything else is comparatively easy.''
+	    Kernighan and Ritchie (``K\&R''), 1978
+
+	    \begin{itemize}
+		    \item the interpreter: python3
+		    \item the development environment: idle
+		    \item saving the file and running as a script: the \textit{``shebang''}
+	    \end{itemize}
+    \end{frame}
+
+    \begin{frame}
+	    \frametitle{Basic language syntax: variables \& data}
+	    \framesubtitle{data are the fundamental building blocks of any program}
+	    \begin{itemize}
+		    \item Allows storage of data by a name:
+			    \begin{itemize}
+				    \item my\_var = "value"
+				    \item denominator = 7
+			    \end{itemize}
+		    \item Be careful how you name them!
+			    \begin{itemize}
+				    \item clear and consise names: easy to read, descriptive
+				    \item don't clash with other names in use (including language reserved keywords
+				    \item Python style guide recommendation: variable names should be lowercase, with words separated by underscores as necessary to improve readability
+				    \item GLOBAL\_VARIABLES = "all caps"
+			    \end{itemize}
+	    \end{itemize}
+    \end{frame}
+
+    \begin{frame}
+	    \frametitle{Basic language syntax: lists, iterables}
+	    \framesubtitle{a list is a type of sequence}
+	    \begin{itemize}
+		    \item an iterable is an object with multiple elements
+		    \item accessing multiple times can allow you to perform an operation on every element
+	    \end{itemize}
+    \end{frame}
+
+\defverbatim[colored]\lstI{
+\begin{lstlisting}[language=Python,basicstyle=\ttfamily,keywordstyle=\color{red}]
+if <statement>:
+	<indented code block>
+elif <another statement>:
+	<indented code>
+else:
+	<more code>
+\end{lstlisting}
+
+}
+
+
+    \begin{frame}
+	    \frametitle{Basic language syntax: conditional statements}
+	    \framesubtitle{perform a different action depending on the result of a test}
+	    \begin{itemize}
+		    \item in Python:
+	    \end{itemize}
+	    \lstI
+
+    \end{frame}
+
+\defverbatim[colored]\lstJ{
+\begin{lstlisting}[language=Python,basicstyle=\ttfamily,keywordstyle=\color{red}]
+for item in <iterable>:
+	<code block>
+
+while <condition>:
+	<code block>
+\end{lstlisting}
+
+}
+
+
+    \begin{frame}
+	    \frametitle{Basic language syntax: loops}
+	    \framesubtitle{repeat a process over and over until a condition is met}
+	    \begin{itemize}
+		    \item \textit{iteration}
+		    \item in Python --- \textit{for loop} and \textit{while loop}:
+	    \end{itemize}
+	    \lstJ
+    \end{frame}
+
+    \begin{frame}
+	    \frametitle{Basic language syntax: user input}
+	    \framesubtitle{store data to operate on}
+	    \begin{itemize}
+		    \item \textit{stdin}
+		    \item \textit{args}: command line arguments
+	    \end{itemize}
+    \end{frame}
+
+
+    \begin{frame}
+	    \frametitle{Basic language syntax: using external modules}
+	    \framesubtitle{add features to your program}
+	    \begin{itemize}
+		    \item allows you to take advantage of community contributed code
+		    \item pip: tool to collect and install external modules from internet repository
+	    \end{itemize}
+    \end{frame}
+
+    \begin{frame}
+	    \frametitle{Designing your program: drawing board}
+	    \framesubtitle{think about the process}
+		    ``Computer science is no more about computers than astronomy is about telescopes.'' --- Dijkstra
+	    \begin{itemize}
+		    \item paper and pen
+		    \item get the steps right before you start and the rest will be easy
+	    \end{itemize}
+    \end{frame}
+
+    \begin{frame}
+	    \frametitle{Possibilities: file renaming}
+	    \framesubtitle{Automate a boring task}
+	    \begin{itemize}
+		    \item 
+	    \end{itemize}
+    \end{frame}
+
+    \begin{frame}
+	    \frametitle{Possibilities: remove all duplicate patients from a spreadsheet}
+	    \framesubtitle{Automate a boring task}
+	    \begin{itemize}
+		    \item 
+	    \end{itemize}
+    \end{frame}
+
+    \begin{frame}
+	    \frametitle{Possibilities: find all phone numbers in a text document}
+	    \framesubtitle{Regular expressions}
+	    \begin{itemize}
+		    \item 
+	    \end{itemize}
+    \end{frame}
+
+
+    \begin{frame}
+	    \frametitle{Possibilities: recognise the type of flower in an image}
+	    \framesubtitle{Tensorflow}
+	    \begin{itemize}
+		    \item 
+	    \end{itemize}
+    \end{frame}
+
+    \begin{frame}
+	    \frametitle{Modules: useful extensions}
+	    \framesubtitle{A few selected modules out of hundreds}
+	    \begin{itemize}
+		    \item Tensorflow
+		    \item NLTK
+		    \item Pandas and numpy
+		    \item Requests
+		    \item pygtk
+		    \item scrapy
+	    \end{itemize}
+    \end{frame}
+
+
+
+    \begin{frame}
+	    \frametitle{Resources: free tutorials}
+	    \framesubtitle{Learning resources available on the internet}
+	    \begin{itemize}
+		    \item 
+		    \item \textit{massive open online courses}
+			    \begin{itemize}
+				    \item EdX, Coursera
+			    \end{itemize}
+	    \end{itemize}
+    \end{frame}
+
+    \begin{frame}
+	    \frametitle{Resources: practice to improve your skills}
+	    \framesubtitle{Thousands of resources are available}
+	    \begin{itemize}
+		    \item coding websites
+			    \begin{itemize}
+				    \item Hacker Rank
+			    \end{itemize}
+		    \item open access data
+		    \item contributing to an open source project
+			    \begin{itemize}
+				    \item Horos, Orthanc, OpenCV, Python
+			    \end{itemize}
+	    \end{itemize}
+    \end{frame}
+
+    \begin{frame}
+	    \frametitle{Resources: getting help}
+	    \framesubtitle{Help from the community}
+	    \begin{itemize}
+		    \item Stackoverflow
+		    \item Internet relay chat: \#python on irc.freenode.net
+		    \item Mailing lists:
+	    \end{itemize}
+    \end{frame}
+
+
+\end{document}
