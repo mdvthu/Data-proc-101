@@ -174,14 +174,14 @@
 						    \item mastery may take a lifetime
 					    \end{itemize}
 			    \end{itemize}
-			   \end{itemize}
-			   \begin{itemize}
-		    \item categorisation
-			    \begin{itemize}
-				    \item high level (Python, Java, etc) vs. lower level (C, assembly) vs. low level (machine code)
-				    \item by programming paradigm: imperitive (procedural, object orientated), declarative (functional, logical), symbolic
-			    \end{itemize} 
 	    \end{itemize}
+			   \begin{itemize}
+				   \item categorisation
+					   \begin{itemize}
+						   \item high level (Python, Java, etc) vs. lower level (C, assembly) vs. low level (machine code)
+						   \item by programming paradigm: imperitive (procedural, object orientated), declarative (functional, logical), symbolic
+					   \end{itemize} 
+			   \end{itemize}
     \end{frame}
 
     \begin{frame}
@@ -207,13 +207,13 @@
     \end{frame}
 
 \defverbatim[colored]\lstA{
-\begin{lstlisting}[language=Python,basicstyle=\ttfamily,keywordstyle=\color{red}]
-def drive_car(location):
+	\begin{lstlisting}[language=Python,basicstyle=\ttfamily,keywordstyle=\color{red}]
+	def drive_car(location):
 	<precise instructions>
 
-drive_car("50.376289, -4.143841")
-drive_car("51.509865, -0.118092")
-\end{lstlisting}
+	drive_car("50.376289, -4.143841")
+	drive_car("51.509865, -0.118092")
+	\end{lstlisting}
 
 }
 
@@ -237,10 +237,10 @@ drive_car("51.509865, -0.118092")
     \end{frame}
 
 \defverbatim[colored]\lstB{
-\begin{lstlisting}[language=Python,basicstyle=\ttfamily,keywordstyle=\color{red}]
-print( *objects, sep=' ', end='\n',
+	\begin{lstlisting}[language=Python,basicstyle=\ttfamily,keywordstyle=\color{red}]
+	print( *objects, sep=' ', end='\n',
 	file=sys.stdout, flush=False)
-\end{lstlisting}
+	\end{lstlisting}
 
 }
 
@@ -265,14 +265,14 @@ print( *objects, sep=' ', end='\n',
 
 
 \defverbatim[colored]\lstC{
-\begin{lstlisting}[language=Python,basicstyle=\ttfamily,keywordstyle=\color{red}]
-def test_function():
+	\begin{lstlisting}[language=Python,basicstyle=\ttfamily,keywordstyle=\color{red}]
+	def test_function():
 	'''Runs a test.'''
 	print("Testing... 1, 2, 3")
 
-# run the test
-test_function()
-\end{lstlisting}
+	# run the test
+	test_function()
+	\end{lstlisting}
 
 }
 
@@ -292,11 +292,11 @@ test_function()
 
 
 \defverbatim[colored]\lstD{
-\begin{lstlisting}[language=Python,basicstyle=\ttfamily,keywordstyle=\color{red}]
-my_var = "value"
-denominator = 7 
-GLOBAL_VARIABLES = "all caps"
-\end{lstlisting}
+	\begin{lstlisting}[language=Python,basicstyle=\ttfamily,keywordstyle=\color{red}]
+	my_var = "value"
+	denominator = 7 
+	GLOBAL_VARIABLES = "all caps"
+	\end{lstlisting}
 
 }
 
@@ -318,14 +318,14 @@ GLOBAL_VARIABLES = "all caps"
     \end{frame}
 
 \defverbatim[colored]\lstE{
-\begin{lstlisting}[language=Python,basicstyle=\ttfamily,keywordstyle=\color{red}]
-body_parts = ["hand", "elbow", "shoulder"]
-months = ("Jan", "Feb", "Mar", ...) 
-empty_list = list()
+	\begin{lstlisting}[language=Python,basicstyle=\ttfamily,keywordstyle=\color{red}]
+	body_parts = ["hand", "elbow", "shoulder"]
+	months = ("Jan", "Feb", "Mar", ...) 
+	empty_list = list()
 
->>> print(months[0]) # 0-indexed
-Jan
-\end{lstlisting}
+	>>> print(months[0]) # 0-indexed
+	Jan
+	\end{lstlisting}
 
 }
 
@@ -344,12 +344,12 @@ Jan
     \end{frame}
 
 \defverbatim[colored]\lstF{
-\begin{lstlisting}[language=Python,basicstyle=\ttfamily,keywordstyle=\color{red}]
->>> 1 == 1
-True
->>> 10 <= 0
-False
-\end{lstlisting}
+	\begin{lstlisting}[language=Python,basicstyle=\ttfamily,keywordstyle=\color{red}]
+	>>> 1 == 1
+	True
+	>>> 10 <= 0
+	False
+	\end{lstlisting}
 
 }
 
@@ -367,17 +367,17 @@ False
 
 
 \defverbatim[colored]\lstI{
-\begin{lstlisting}[language=Python,basicstyle=\ttfamily,keywordstyle=\color{red}]
-if <statement>:
+	\begin{lstlisting}[language=Python,basicstyle=\ttfamily,keywordstyle=\color{red}]
+	if <statement>:
 	<indented code block>
-elif <another statement>:
+	elif <another statement>:
 	<indented code>
-else:
+	else:
 	<more code>
 
-<statement> == True # activates 
-<statement> == False # skips
-\end{lstlisting}
+	<statement> == True # activates 
+	<statement> == False # skips
+	\end{lstlisting}
 
 }
 
@@ -393,13 +393,13 @@ else:
     \end{frame}
 
 \defverbatim[colored]\lstJ{
-\begin{lstlisting}[language=Python,basicstyle=\ttfamily,keywordstyle=\color{red}]
-for item in <iterable>:
+	\begin{lstlisting}[language=Python,basicstyle=\ttfamily,keywordstyle=\color{red}]
+	for item in <iterable>:
 	<code block>
 
-while <condition>:
+	while <condition>:
 	<code block>
-\end{lstlisting}
+	\end{lstlisting}
 
 }
 
@@ -420,17 +420,17 @@ while <condition>:
 
 
     \defverbatim[colored]\lstK{
-\begin{lstlisting}[language=Python,basicstyle=\ttfamily,keywordstyle=\color{red}]
-# get some standard input
-user_input = input()
+	    \begin{lstlisting}[language=Python,basicstyle=\ttfamily,keywordstyle=\color{red}]
+	    # get some standard input
+	    user_input = input()
 
-# prints all the items in the argument vector
-import sys
-for item in sys.argv:
-	print(item)
-\end{lstlisting}
+	    # prints all the items in the argument vector
+	    import sys
+	    for item in sys.argv:
+	    print(item)
+	    \end{lstlisting}
 
-}
+    }
 
 
     \begin{frame}
@@ -441,25 +441,25 @@ for item in sys.argv:
 		    \item \textit{stdin}: ``standard input''
 		    \item \textit{args}: command line arguments
 	    \end{itemize}
-	   \lstK
+	    \lstK
     \end{frame}
 
    \defverbatim[colored]\lstL{
-\begin{lstlisting}[language=Python,basicstyle=\ttfamily,keywordstyle=\color{red}]
-# use the os module to find all the files
-import os
-files = os.walk('.')
-\end{lstlisting}
+	   \begin{lstlisting}[language=Python,basicstyle=\ttfamily,keywordstyle=\color{red}]
+	   # use the os module to find all the files
+	   import os
+	   files = os.walk('.')
+	   \end{lstlisting}
 
-}
+   }
 
    \defverbatim[colored]\lstM{
-\begin{lstlisting}[language=Bash,basicstyle=\ttfamily,keywordstyle=\color{red}]
-# install a new python module
-$ pip3 install tensorflow
-\end{lstlisting}
+	   \begin{lstlisting}[language=Bash,basicstyle=\ttfamily,keywordstyle=\color{red}]
+	   # install a new python module
+	   $ pip3 install tensorflow
+	   \end{lstlisting}
 
-}
+   }
 
     \begin{frame}
 	    \frametitle{Basic language syntax: using external modules}
@@ -476,7 +476,7 @@ $ pip3 install tensorflow
 	    \frametitle{Designing your program: drawing board}
 	    \framesubtitle{think about the process}
 	    {
-	    \scriptsize
+		    \scriptsize
 		    ``Computer science is no more about computers than astronomy is about telescopes.''
 		    \newline
 		    -- Dijkstra
@@ -612,7 +612,7 @@ $ pip3 install tensorflow
 	    \end{itemize}
     \end{frame}
    \begin{frame}
-	    \frametitle{Summary}
+	   \frametitle{Summary}
 	    \framesubtitle{Topics covered}
 	    \begin{itemize}
 		    \item basic definitions and background
@@ -626,7 +626,7 @@ $ pip3 install tensorflow
 		    \item some uses
 		    \item help and resources
 	    \end{itemize}
-    \end{frame}
+   \end{frame}
 
 
 
