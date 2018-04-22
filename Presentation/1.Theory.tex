@@ -90,7 +90,7 @@
 
 %% Information (author, title, etc.) %%
 
-\title[Programming workshop]{Programming workshop: a brief introduction}
+\title[Programming workshop]{Programming workshop: a very brief introduction}
 
 \author{
 	\sc{Mark Thurston}\\
@@ -134,7 +134,7 @@
 			    \end{itemize}
 	    \end{itemize}
 	    \begin{itemize}
-		    \item ask questions at any point if unclear
+		    \item questions welcome throughout
 	    \end{itemize}
     \end{frame}
     %
@@ -149,12 +149,12 @@
 				    \item some simple problems are impossible without very basic programming skills
 				    \item master your research data
 			    \end{itemize}
-		    \item useful in understanding and implementing emerginig radiological technologies
+		    \item useful in understanding and implementing emerging radiology technologies
 			    \begin{itemize}
 				    \item AI, radiomics
 				    \item knowledge enables you to navigate the hype -- useful at conferences and as a consultant
 			    \end{itemize}
-		    \item interesting and fun :) -- a huge field if you enjoy learning new things
+		    \item interesting and fun :) -- especially if you enjoy learning new things
 	    \end{itemize}
     \end{frame}
 
@@ -168,8 +168,14 @@
 				    \item spelling
 				    \item grammatical rules
 				    \item common useage
-				    \item skill level -- basic to mastery -- the basics can still be put to very good use, mastery may take a lifetime
+				    \item skill level -- basic to mastery 
+					    \begin{itemize}
+						    \item the basics can still be put to very good use
+						    \item mastery may take a lifetime
+					    \end{itemize}
 			    \end{itemize}
+			   \end{itemize}
+			   \begin{itemize}
 		    \item categorisation
 			    \begin{itemize}
 				    \item high level (Python, Java, etc) vs. lower level (C, assembly) vs. low level (machine code)
@@ -182,19 +188,34 @@
 	    \frametitle{Definitions: Python}
 	    \framesubtitle{``The Python philosophy rejects exuberant syntax in favor of a simpler, less-cluttered grammar.''}
 	    \begin{itemize}
-		    \item easy to learn: based on the ``ABC'' language - a research project 
+		    \item easy to learn: based on the \textit{ABC language} --- a research project 
 			    \begin{itemize}
-				    \item ``Simplicity is the ultimate sophistication'' --- William Gaddis
+				    \item ``Simplicity is the ultimate sophistication'' \tiny{--- William Gaddis}
 			    \end{itemize}
-		    \item open source
+		    \item open source: 
+			    \begin{itemize}
+				    \item \textit{Python Software Foundation Licence (PSFL)} 
+				    \item BSD style licence
+			    \end{itemize}
 		    \item massive community
 			    \begin{itemize}
 				    \item loads of extra functionality available as modules
-				    \item data processing, artificial intelligence, image recognition
+				    \item domains include \textbf{data processing}, \textbf{artificial intelligence}, \textbf{image recognition}
 				    \item help is easily available online for free if you get stuck
 			    \end{itemize}
 	    \end{itemize}
     \end{frame}
+
+\defverbatim[colored]\lstA{
+\begin{lstlisting}[language=Python,basicstyle=\ttfamily,keywordstyle=\color{red}]
+def drive_car(location):
+	<precise instructions>
+
+drive_car("50.376289, -4.143841")
+drive_car("51.509865, -0.118092")
+\end{lstlisting}
+
+}
 
     \begin{frame}
 	    \frametitle{Definitions: abstraction}
@@ -202,59 +223,121 @@
 	    \begin{itemize}
 		    \item in general:
 			    \begin{itemize}
-				    \item Divide a programming problem into simpler, analogous pieces
-				    \item Solve the problem by combining solutions to simpler pieces
+				    \item divide a programming problem into simpler, analogous pieces
+				    \item solve the problem by combining solutions to simpler pieces
 			    \end{itemize}
+	    \end{itemize}
+	    \begin{itemize}
 		    \item Application Programming Interface (API)
 			    \begin{itemize}
 				    \item a set of clearly defined methods of communication between various software components
 			    \end{itemize}
 	    \end{itemize}
+	    \lstA
     \end{frame}
 
+\defverbatim[colored]\lstB{
+\begin{lstlisting}[language=Python,basicstyle=\ttfamily,keywordstyle=\color{red}]
+print( *objects, sep=' ', end='\n',
+	file=sys.stdout, flush=False)
+\end{lstlisting}
+
+}
 
     \begin{frame}
 	    \frametitle{Basic language syntax: hello world}
 	    \framesubtitle{your first program}
-
+	    {\scriptsize
 	    ``The only way to learn a new programming language is by writing programs in it. The first program to write is the same for all languages:
 	    Print the words: \textit{hello, world}
 	    ...  With these mechanical details mastered, everything else is comparatively easy.''
-	    Kernighan and Ritchie (``K\&R''), 1978
+	    \newline
+	    -- Kernighan and Ritchie (``K\&R''), 1978
+	    }
 
 	    \begin{itemize}
 		    \item the interpreter: python3
-		    \item the development environment: idle
 		    \item saving the file and running as a script: the \textit{``shebang''}
+		    \item the print function: prints objects to a specified place (in our case, the screen \textit{stdout})
 	    \end{itemize}
+	    \lstB
     \end{frame}
+
+
+\defverbatim[colored]\lstB{
+\begin{lstlisting}[language=Python,basicstyle=\ttfamily,keywordstyle=\color{red}]
+print( *objects, sep=' ', end='\n',
+	file=sys.stdout, flush=False)
+\end{lstlisting}
+
+}
+
+    \begin{frame}
+	    \frametitle{Basic language syntax: comments and strings}
+	    \framesubtitle{your first program}
+	    \begin{itemize}
+		    \item the interpreter: python3
+		    \item saving the file and running as a script: the \textit{``shebang''}
+		    \item the print function: prints objects to a specified place (in our case, the screen \textit{stdout})
+	    \end{itemize}
+	    \lstB
+    \end{frame}
+
+
+
+
+
+
+\defverbatim[colored]\lstC{
+\begin{lstlisting}[language=Python,basicstyle=\ttfamily,keywordstyle=\color{red}]
+my_var = "value"
+denominator = 7 
+GLOBAL_VARIABLES = "all caps"
+\end{lstlisting}
+
+}
+
 
     \begin{frame}
 	    \frametitle{Basic language syntax: variables \& data}
 	    \framesubtitle{data are the fundamental building blocks of any program}
 	    \begin{itemize}
-		    \item Allows storage of data by a name:
-			    \begin{itemize}
-				    \item my\_var = "value"
-				    \item denominator = 7
-			    \end{itemize}
-		    \item Be careful how you name them!
+		    \item allows storage of data by a name
+		    \item be careful how you name them!
 			    \begin{itemize}
 				    \item clear and consise names: easy to read, descriptive
 				    \item don't clash with other names in use (including language reserved keywords
-				    \item Python style guide recommendation: variable names should be lowercase, with words separated by underscores as necessary to improve readability
-				    \item GLOBAL\_VARIABLES = "all caps"
+				    \item Python style guide recommendation: variable names should be lowercase, with words separated by underscores as necessary to improve readability.
+					    Uppercase global variable names.
 			    \end{itemize}
 	    \end{itemize}
+	    \lstC
     \end{frame}
+
+\defverbatim[colored]\lstD{
+\begin{lstlisting}[language=Python,basicstyle=\ttfamily,keywordstyle=\color{red}]
+body_parts = ["hand", "elbow", "shoulder"]
+months = ("Jan", "Feb", "Mar", ...) 
+empty_list = list()
+
+>>> print(months[0])
+Jan
+\end{lstlisting}
+
+}
+
 
     \begin{frame}
 	    \frametitle{Basic language syntax: lists, iterables}
 	    \framesubtitle{a list is a type of sequence}
 	    \begin{itemize}
-		    \item an iterable is an object with multiple elements
+		    \item an iterable is an object with multiple elements: 0-indexed
+			    \begin{itemize}
+				    \item including \textit{lists}, \textit{tuples}, \textit{sets}
+			    \end{itemize}
 		    \item accessing multiple times can allow you to perform an operation on every element
 	    \end{itemize}
+	    \lstD
     \end{frame}
 
 \defverbatim[colored]\lstI{
@@ -265,6 +348,9 @@ elif <another statement>:
 	<indented code>
 else:
 	<more code>
+
+<statement> == True // activates 
+<statement> == False // skips
 \end{lstlisting}
 
 }
@@ -274,7 +360,7 @@ else:
 	    \frametitle{Basic language syntax: conditional statements}
 	    \framesubtitle{perform a different action depending on the result of a test}
 	    \begin{itemize}
-		    \item in Python:
+		    \item control which part of the program is activated 
 	    \end{itemize}
 	    \lstI
 
@@ -296,7 +382,11 @@ while <condition>:
 	    \frametitle{Basic language syntax: loops}
 	    \framesubtitle{repeat a process over and over until a condition is met}
 	    \begin{itemize}
-		    \item \textit{iteration}
+		    \item \textit{iteration}: perform an operation on multiple elements
+			    \begin{itemize}
+				    \item each file in a directory
+				    \item each DICOM image in a list
+			    \end{itemize}
 		    \item in Python --- \textit{for loop} and \textit{while loop}:
 	    \end{itemize}
 	    \lstJ
