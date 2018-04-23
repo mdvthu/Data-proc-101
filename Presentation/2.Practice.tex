@@ -1,0 +1,202 @@
+%% This presentation was based on Tim Osgood's
+%% excellent freely available template:
+%% timhosgood@gmail.com %%
+%% Thank you
+
+\documentclass{beamer}
+\usepackage[utf8]{inputenc}
+\usepackage{charter}
+\usepackage{tikz}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{epigraph}
+\usepackage{trace}
+
+\usepackage{listings}
+
+%% Title slide formatting %%
+
+\pgfdeclareimage[width=\paperwidth]{titlebackground}{images/title-slide-background.png}
+\setbeamerfont{subtitle}{size=\tiny}
+\setbeamertemplate{title page}{
+	\begin{picture}(0,0)
+		\put(-28.5,-163){%
+			\pgfuseimage{titlebackground}
+		}
+		\put(0,-75){%
+			\begin{minipage}[b][4.5cm][t]{0.5\textwidth}
+				\color{black}
+				\usebeamerfont{title}
+				{\inserttitle\\[0.9cm]}
+				\usebeamerfont{subtitle}
+				{\insertauthor\par}
+				{\insertinstitute\\[0.3cm]}
+				{\insertdate}
+			\end{minipage}
+		}
+	\end{picture}
+}
+
+
+
+%% General slide formatting %%
+
+\definecolor{nhsdarkblue}{RGB}{0,48,135}
+
+\pgfdeclareimage[width=1.4cm]{phntlogo}{images/phnt-logo.png}
+
+\setbeamertemplate{headline}
+{%
+	\begin{picture}(0,0)
+		\put(314,-30){%
+			\pgfuseimage{phntlogo}
+		}
+		\put(20,-55){%
+			\rule{320pt}{0.4pt}
+		}
+	\end{picture}
+}
+
+\setbeamertemplate{frametitle}
+{%
+	\begin{picture}(0,0)
+		\put(-8,-10){%
+			\normalsize\color{nhsdarkblue}\insertframetitle
+		}
+		\put(-7,-20){%
+			\tiny\color{nhsdarkblue}\insertframesubtitle
+		}
+	\end{picture}
+}
+
+\setbeamertemplate{footline}
+{%
+	\begin{picture}(0,0)
+		\put(20,30){%
+			\rule{320pt}{0.4pt}
+		}
+		\put(100,14){%
+			\color{nhsdarkblue}\insertshortdate
+		}
+		\put(160,14){%
+			\color{nhsdarkblue}\insertshorttitle
+		}
+		\put(337,14){%
+			\color{nhsdarkblue}\insertpagenumber
+		}
+	\end{picture}%
+}
+
+
+
+%% Information (author, title, etc.) %%
+
+\title[Programming workshop]{Programming workshop: a very brief introduction}
+
+\author{
+	\sc{Mark Thurston}\\
+    \textit{Radiology Registrar}
+} 
+\institute{
+	\textit{Peninsula Radiology Academy}\\
+    \textit{Plymouth}
+}
+\date[April 2018]{An introduction to automation with Python} % short date for footer
+
+
+
+%% Content of slides %%
+
+\begin{document}
+
+    \begin{frame}[plain]
+	    \titlepage
+    \end{frame}
+
+
+    \begin{frame}
+	    \frametitle{Session aims}
+	    \framesubtitle{By the end of this session, you will be able to:}
+
+	    \begin{itemize}
+		    \item Part 2: Practice
+			    \begin{itemize}
+				    \item set up a Python environment
+				    \item run some pre-written example programs
+				    \item Write your own simple example programs
+			    \end{itemize}
+	    \end{itemize}
+	    \begin{itemize}
+		    \item questions welcome throughout
+	    \end{itemize}
+    \end{frame}
+    %
+
+
+    \begin{frame}
+	    \frametitle{Installing Python}
+	    \framesubtitle{Getting up and running}
+
+	    \begin{itemize}
+		    \item Python is completely free to run on your computer without restrictions
+		    \item no disadvantages to installation: no privacy concerns I'm aware of
+		    \item download link:
+			    \begin{itemize}
+				    \item \url{https://www.python.org/downloads/}
+			    \end{itemize}
+		    \item 64-bit version should run on all reasonably modern computers
+			    \begin{itemize}
+		    \item try the 32-bit version if unsuccessful
+			    \end{itemize}
+	    \end{itemize}
+    \end{frame}
+    %
+    
+    
+    \begin{frame}
+	    \frametitle{Starting the Python interpreter}
+	    \framesubtitle{Getting started with the Python interpreter}
+
+	    \begin{itemize}
+		    \item Applications $\Rightarrow$ Utilities $\Rightarrow$ Terminal
+		    \item Finder window, Go: Utilities $\Rightarrow$ Terminal
+		    \item type \textit{``python3''} at the \$ prompt
+	    \end{itemize}
+    \end{frame}
+    %
+
+\defverbatim[colored]\lstA{
+	\begin{lstlisting}[language=Python,basicstyle=\ttfamily,keywordstyle=\color{red}]
+	# full definition
+	print( *objects, sep=' ', end='\n',
+	file=sys.stdout, flush=False)
+
+	# most useful part
+	print( *objects )
+	\end{lstlisting}
+
+}
+
+
+
+    \begin{frame}
+	    \frametitle{Your first program}
+	    \framesubtitle{Hello world}
+
+	    \begin{itemize}
+		    \item Which function do you need?
+	    \end{itemize}
+	    \lstA
+    \end{frame}
+    %
+
+
+
+
+
+
+
+
+
+\end{document}
