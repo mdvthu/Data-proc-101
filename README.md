@@ -1,8 +1,8 @@
-### Data processing 101
+### Python 101
 
 Clone this repository with the following command:
 ```bash
-git clone https://github.com/mdvthu/Data-proc-101
+git clone https://github.com/mdvthu/Python-101
 ```
 
 The `/Examples` directory contains various Python code examples to get started with.
