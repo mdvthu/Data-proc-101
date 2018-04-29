@@ -210,11 +210,11 @@
 
 \defverbatim[colored]\lstA{
 	\begin{lstlisting}[language=Python,basicstyle=\ttfamily,keywordstyle=\color{red}]
-	def drive_car(location):
+def drive_car(location):
 	<precise instructions>
 
-	drive_car("50.376289, -4.143841")
-	drive_car("51.509865, -0.118092")
+drive_car("50.376289, -4.143841")
+drive_car("51.509865, -0.118092")
 	\end{lstlisting}
 
 }
@@ -240,7 +240,7 @@
 
 \defverbatim[colored]\lstB{
 	\begin{lstlisting}[language=Python,basicstyle=\ttfamily,keywordstyle=\color{red}]
-	print( *objects, sep=' ', end='\n',
+print( *objects, sep=' ', end='\n',
 	file=sys.stdout, flush=False)
 	\end{lstlisting}
 
@@ -268,12 +268,12 @@
 
 \defverbatim[colored]\lstC{
 	\begin{lstlisting}[language=Python,basicstyle=\ttfamily,keywordstyle=\color{red}]
-	def test_function():
+def test_function():
 	'''Runs a test.'''
 	print("Testing... 1, 2, 3")
 
-	# run the test
-	test_function()
+# run the test
+test_function()
 	\end{lstlisting}
 
 }
@@ -295,9 +295,9 @@
 
 \defverbatim[colored]\lstD{
 	\begin{lstlisting}[language=Python,basicstyle=\ttfamily,keywordstyle=\color{red}]
-	my_var = "value"
-	denominator = 7 
-	GLOBAL_VARIABLES = "all caps"
+my_var = "value"
+denominator = 7 
+GLOBAL_VARIABLES = "all caps"
 	\end{lstlisting}
 
 }
@@ -321,12 +321,12 @@
 
 \defverbatim[colored]\lstE{
 	\begin{lstlisting}[language=Python,basicstyle=\ttfamily,keywordstyle=\color{red}]
-	body_parts = ["hand", "elbow", "shoulder"]
-	months = ("Jan", "Feb", "Mar", ...) 
-	empty_list = list()
+body_parts = ["hand", "elbow", "shoulder"]
+months = ("Jan", "Feb", "Mar", ...) 
+empty_list = list()
 
-	>>> print(months[0]) # 0-indexed
-	Jan
+>>> print(months[0]) # 0-indexed
+Jan
 	\end{lstlisting}
 
 }
@@ -347,11 +347,11 @@
 
 \defverbatim[colored]\lstF{
 	\begin{lstlisting}[language=Python,basicstyle=\ttfamily,keywordstyle=\color{red}]
-	>>> 1 == 1
-	True
-	>>> 10 <= 0
-	False
-	\end{lstlisting}
+>>> 1 == 1
+True
+>>> 10 <= 0
+False
+\end{lstlisting}
 
 }
 
@@ -369,17 +369,17 @@
 
 
 \defverbatim[colored]\lstI{
-	\begin{lstlisting}[language=Python,basicstyle=\ttfamily,keywordstyle=\color{red}]
-	if <statement>:
+\begin{lstlisting}[language=Python,basicstyle=\ttfamily,keywordstyle=\color{red}]
+if <statement>:
 	<indented code block>
-	elif <another statement>:
+elif <another statement>:
 	<indented code>
-	else:
+else:
 	<more code>
 
-	<statement> == True # activates 
-	<statement> == False # skips
-	\end{lstlisting}
+<statement> == True # activates 
+<statement> == False # skips
+\end{lstlisting}
 
 }
 
@@ -395,13 +395,13 @@
     \end{frame}
 
 \defverbatim[colored]\lstJ{
-	\begin{lstlisting}[language=Python,basicstyle=\ttfamily,keywordstyle=\color{red}]
-	for item in <iterable>:
+\begin{lstlisting}[language=Python,basicstyle=\ttfamily,keywordstyle=\color{red}]
+for item in <iterable>:
 	<code block>
 
-	while <condition>:
+while <condition>:
 	<code block>
-	\end{lstlisting}
+\end{lstlisting}
 
 }
 
@@ -421,18 +421,17 @@
     \end{frame}
 
 
-    \defverbatim[colored]\lstK{
-	    \begin{lstlisting}[language=Python,basicstyle=\ttfamily,keywordstyle=\color{red}]
-	    # get some standard input
-	    user_input = input()
+\defverbatim[colored]\lstK{
+\begin{lstlisting}[language=Python,basicstyle=\ttfamily,keywordstyle=\color{red}]
+# get some standard input
+user_input = input()
 
-	    # prints all the items in the argument vector
-	    import sys
-	    for item in sys.argv:
-	    print(item)
-	    \end{lstlisting}
-
-    }
+# prints all the items in the argument vector
+import sys
+for item in sys.argv:
+   print(item)
+\end{lstlisting}
+}
 
 
     \begin{frame}
@@ -448,20 +447,20 @@
 
    \defverbatim[colored]\lstL{
 	   \begin{lstlisting}[language=Python,basicstyle=\ttfamily,keywordstyle=\color{red}]
-	   # use the os module to find all the files
-	   import os
-	   files = os.walk('.')
-	   \end{lstlisting}
+# use the os module to find all the files
+import os
+files = os.walk('.')
+\end{lstlisting}
 
    }
 
    \defverbatim[colored]\lstM{
-	   \begin{lstlisting}[language=Bash,basicstyle=\ttfamily,keywordstyle=\color{red}]
-	   # install a new python module
-	   $ pip3 install tensorflow
-	   \end{lstlisting}
+\begin{lstlisting}[language=Bash,basicstyle=\ttfamily,keywordstyle=\color{red}]
+# install a new python module
+$ pip3 install tensorflow
+\end{lstlisting}
 
-   }
+}
 
     \begin{frame}
 	    \frametitle{Basic language syntax: using external modules}
