@@ -1,0 +1,24 @@
+abdomen
+ankle
+calcaneum
+cervical spine
+chest
+elbow
+finger
+foot
+forearm
+hand
+hip
+humerus
+knee
+leg
+lumbar spine
+mandible
+patella
+pelvis
+scaphoid
+shoulder
+skull
+thoracic spine
+thumb
+wrist
