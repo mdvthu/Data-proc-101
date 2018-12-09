@@ -1,1 +1,3 @@
 __pycache__
+Notebook/*.data
+Notebook/.ipynb_checkpoints/

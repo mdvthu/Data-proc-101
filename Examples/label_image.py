@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 # Copyright 2017 The TensorFlow Authors. All Rights Reserved.
 #
@@ -15,16 +15,15 @@
 # limitations under the License.
 # ==============================================================================
 
-from __future__ import absolute_import
-from __future__ import division
-from __future__ import print_function
-
 import argparse
 import sys
 import time
+import os
 
 import numpy as np
 import tensorflow as tf
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
+
 
 def load_graph(model_file):
   graph = tf.Graph()
@@ -36,6 +35,7 @@ def load_graph(model_file):
     tf.import_graph_def(graph_def)
 
   return graph
+
 
 def read_tensor_from_image_file(file_name, input_height=299, input_width=299,
 				input_mean=0, input_std=255):
