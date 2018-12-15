@@ -8,7 +8,9 @@ git clone https://github.com/mdvthu/Python-101
 ### Resources
 
  `/Presentation`: Classroom presentation (LaTeX source and PDF)
+
  `/Examples`: text file Python code examples
+
  `/Notebook`: Jupyter Python examples
 
 
