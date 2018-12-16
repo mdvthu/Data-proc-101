@@ -120,60 +120,124 @@
 	    \framesubtitle{By the end of this session, you will be able to:}
 
 	    \begin{itemize}
-		    \item Part 2: Practice
+		    \item Part 2: Practical session
 			    \begin{itemize}
-				    \item set up a Python environment
-				    \item run some pre-written example programs
+				    \item Download and install the tools you need
+				    \item Download the tutorial
+				    \item Run pre-written example programs
 				    \item Write your own simple example programs
 			    \end{itemize}
 	    \end{itemize}
 	    \begin{itemize}
-		    \item questions welcome throughout
+		    \item Questions at any point
 	    \end{itemize}
     \end{frame}
     %
-
-    \begin{frame}
-	    \frametitle{Installing Python}
-
-	    \begin{center}
-	    \includegraphics[height=4cm]{images/spam.jpg}
-	    \end{center}
-    \end{frame}
 
     \begin{frame}
 	    \frametitle{Installing Python}
 	    \framesubtitle{Getting up and running}
 
 	    \begin{itemize}
-		    \item Python is completely free to run on your computer without restrictions
-		    \item no disadvantages to installation
-			    \begin{itemize}
-				    \item no privacy concerns I'm aware of
-			    \end{itemize}
-		    \item download link:
+		    \item Free
+		    \item Download link:
 			    \begin{itemize}
 				    \item \url{https://www.python.org/downloads/}
 			    \end{itemize}
-		    \item 64-bit version should run on all reasonably modern computers
-			    \begin{itemize}
-		    \item try the 32-bit version if unsuccessful
-			    \end{itemize}
+		    \item Try 64 bit version first
 	    \end{itemize}
     \end{frame}
     %
 
-    
+
     \begin{frame}
 	    \frametitle{Starting the Python interpreter}
 	    \framesubtitle{Getting started with the Python interpreter}
 
 	    \begin{itemize}
-		    \item Applications $\Rightarrow$ Utilities $\Rightarrow$ Terminal
-		    \item type \textit{``python3''} at the \$ prompt
+		    \item macOS
+			    \begin{itemize}
+				    \item Applications $\Rightarrow$ Utilities $\Rightarrow$ Terminal
+				    \item type \textit{``python3''} at the \$ prompt
+			    \end{itemize}
+		    \item Windows
+			    \begin{itemize}
+				    \item Win key + R $\Rightarrow$ type \textit{``cmd''}
+				    \item type \textit{``python''} at the prompt
+			    \end{itemize}
 	    \end{itemize}
     \end{frame}
     %
+
+
+    \begin{frame}
+	    \frametitle{Installing Git}
+	    \framesubtitle{Getting up and running}
+
+	    \begin{itemize}
+		    \item Version control
+			    \begin{itemize}
+				    \item Keep track of changes in your code
+				    \item Contribute to other projects
+			    \end{itemize}
+		    \item Download link:
+			    \begin{itemize}
+				    \item \url{https://git-scm.com/downloads}
+			    \end{itemize}
+	    \end{itemize}
+    \end{frame}
+    %
+\defverbatim[colored]\lstF{
+	\begin{lstlisting}[language=Bash,basicstyle=\ttfamily,keywordstyle=\color{black}]
+git clone https://github.com/mdvthu/Python-101
+	\end{lstlisting}
+
+}
+
+
+
+    \begin{frame}
+	    \frametitle{Clone a ``Git repo''}
+	    \framesubtitle{Getting more program examples from Git}
+
+	    \begin{itemize}
+		    \item To get the course material (including examples and presentation):
+	    \end{itemize}
+	    \lstF
+    \end{frame}
+
+    %
+\defverbatim[colored]\lstF{
+	\begin{lstlisting}[language=Bash,basicstyle=\ttfamily,keywordstyle=\color{black}]
+python3 -m pip install jupyterlab
+	\end{lstlisting}
+
+}
+%
+\defverbatim[colored]\lstG{
+	\begin{lstlisting}[language=Bash,basicstyle=\ttfamily,keywordstyle=\color{black}]
+py -3 -m pip install jupyterlab
+	\end{lstlisting}
+
+}
+
+    \begin{frame}
+	    \frametitle{Installing Jupyter}
+	    \framesubtitle{Getting up and running}
+
+	    \begin{itemize}
+		    \item macOS
+			    \lstF
+		    \item Windows
+			    \lstG
+		    \item More info available at:
+			    \begin{itemize}
+				    \item \url{https://github.com/jupyterlab/jupyterlab}
+				    \item \url{https://jupyter.org}
+			    \end{itemize}
+	    \end{itemize}
+    \end{frame}
+
 
 \defverbatim[colored]\lstA{
 	\begin{lstlisting}[language=Python,basicstyle=\ttfamily,keywordstyle=\color{red}]
@@ -195,6 +259,7 @@ print( *objects )
 
 	    \begin{itemize}
 		    \item Which function do you need?
+		    \item \url{https://docs.python.org/3/library/functions.html}
 	    \end{itemize}
 	    \lstA
     \end{frame}
@@ -211,9 +276,9 @@ Type "help", "copyright", "credits" or "license" for more information.
 
 
 \defverbatim[colored]\lstC{
-\begin{lstlisting}[language=Python,basicstyle=\ttfamily,keywordstyle=\color{red}]
+	\begin{lstlisting}[language=Python,basicstyle=\ttfamily,keywordstyle=\color{red}]
 >>> print("hello, world")	
-\end{lstlisting}
+	\end{lstlisting}
 
 }
 
@@ -232,140 +297,58 @@ Type "help", "copyright", "credits" or "license" for more information.
 
 
     \begin{frame}
-	    \frametitle{Editors}
-	    \framesubtitle{Saving and running your first program}
+	    \frametitle{Notebooks}
+	    \framesubtitle{For experimentation}
 
 	    \begin{itemize}
 		    \item You have just run ``hello world'' \textit{interactively}
-		    \item Now we are going to use a \textit{text editor} to save it as a program so you can run it whenever you like
-		    \item Many text editors are available (beyond the scope of this short presentation)
-			    \begin{itemize}
-		    \item TextEdit is the basic editor included with macOS
-		    \item Notepad is similar on Windows
-			    \end{itemize}
+		    \item Now we will use \textit{``Jupyter Notebook''} to go through a few more examples
 	    \end{itemize}
     \end{frame}
     %
 
-
-
-    \begin{frame}
-	    \frametitle{Editors}
-	    \framesubtitle{TextEdit}
-
-	    \begin{itemize}
-		    \item Finder $\Rightarrow$ Applications $\Rightarrow$ TextEdit
-	    \end{itemize}
-	    \begin{center}
-	    \includegraphics[height=4cm]{images/TextEdit-icon.png}
-	    \end{center}
-    \end{frame}
-    %
-
-
-    \begin{frame}
-	    \frametitle{Editors}
-	    \framesubtitle{TextEdit}
-
-	    \begin{itemize}
-		    \item \textit{Plain text mode} must be activated
-		    \item Format $\Rightarrow$ Make plain text
-	    \end{itemize}
-	    \begin{center}
-	    \includegraphics[height=3cm]{images/make-plain-text.png}
-	    \end{center}
-    \end{frame}
-    %
-
-
-\defverbatim[colored]\lstD{
-	\begin{lstlisting}[language=Python,basicstyle=\ttfamily,keywordstyle=\color{black}]
-#!/usr/bin/env python3
-
-print("Hello world")
-	\end{lstlisting}
-
-}
-
-    \begin{frame}
-	    \frametitle{Helloworld.py}
-	    \framesubtitle{Your first Python program}
-	    \lstD
-	    \begin{itemize}
-		    \item Save the file as ``helloworld.py''
-	    \end{itemize}
-    \end{frame}
-    %
-
-\defverbatim[colored]\lstE{
-	\begin{lstlisting}[language=Bash,basicstyle=\ttfamily,keywordstyle=\color{black}]
-# you should see your program in this list
-$ ls	
-<file 1> <file 2> ... helloworld.py
-
-# ensures the correct permissions to run 
-$ chmod +x helloworld.py
-
-# run your program
-$ ./helloworld.py
+\defverbatim[colored]\lstC{
+	\begin{lstlisting}[language=Python,basicstyle=\ttfamily,keywordstyle=\color{red}]
+python3 -m jupyter lab
 	\end{lstlisting}
 
 }
 
 
-
     \begin{frame}
-	    \frametitle{Running Helloworld.py}
-	    \framesubtitle{Running your first program}
-	    \begin{itemize}
-		    \item open a terminal window
-	    \end{itemize}
-	    \lstE
-    \end{frame}
-
-    
-    \begin{frame}
-	    \frametitle{Installing Git}
-	    \framesubtitle{version control software}
+	    \frametitle{Start Jupyter}
+	    \framesubtitle{Further examples}
 
 	    \begin{itemize}
-		    \item allows you to track changes in your source code
-		    \item helpful when working on files with multiple people or in multiple places
-		    \item download link:
-			    \begin{itemize}
-				    \item \url{https://git-scm.com/download/mac}
-			    \end{itemize}
+		    \item Open a command window
 	    \end{itemize}
+	    \lstC
+
     \end{frame}
     %
-    
-\defverbatim[colored]\lstF{
-	\begin{lstlisting}[language=Bash,basicstyle=\ttfamily,keywordstyle=\color{black}]
-git clone https://github.com/mdvthu/Python-101
-	\end{lstlisting}
-
-}
 
 
 
-    \begin{frame}
-	    \frametitle{Clone a ``Git repo''}
-	    \framesubtitle{Getting more program examples from Git}
-	    
-	    \begin{itemize}
-		    \item more examples are available on Github:
-	    \end{itemize}
-	    \lstF
-    \end{frame}
+       \begin{frame}
+	       \frametitle{Resources: books}
+	       \framesubtitle{Highly recommended}
+	       \begin{figure}
+		       \includegraphics[height=3cm]{images/recommended_book.jpg}
+		       \caption{Python for Data Analysis, Wes McKinney}
+		       \label{fig:pythonbook}
+	       \end{figure}
+       \end{frame}
 
-    \begin{frame}
-	    \frametitle{Resources: books}
-	    \framesubtitle{Learning resources available on the internet}
-	    \begin{itemize}
-		    \item Automate the boring stuff with Python: \url{https://automatetheboringstuff.com/}
-		    \item Another free online tutorial: \url{https://python-textbok.readthedocs.io/en/1.0/}
-	    \end{itemize}
-    \end{frame}
+
+
+       \begin{frame}
+	       \frametitle{Resources: more books}
+	       \framesubtitle{Learning resources available on the internet}
+	       \begin{itemize}
+		       \item Automate the boring stuff with Python: \url{https://automatetheboringstuff.com/}
+		       \item Another free online tutorial: \url{https://python-textbok.readthedocs.io/en/1.0/}
+	       \end{itemize}
+       \end{frame}
 
 
     \begin{frame}
@@ -386,22 +369,18 @@ git clone https://github.com/mdvthu/Python-101
 	    \frametitle{Resources: practice to improve your skills}
 	    \framesubtitle{Thousands of resources are available}
 	    \begin{itemize}
-		    \item coding websites
+		    \item Coding websites
 			    \begin{itemize}
 				    \item \url{https://www.hackerrank.com/domains/python}
 				    \item \url{https://www.codecademy.com/tracks/python}
 			    \end{itemize}
-		    \item open access data
+		    \item Open access data
 			    \begin{itemize}
 				    \item \url{https://data.gov.uk/}
 			    \end{itemize}
-		    \item read other code on \url{https://github.com}
-		    \item contribute to an open source project
+		    \item Curated list of resources
 			    \begin{itemize}
-				    \item Horos
-				    \item Orthanc
-				    \item OpenCV
-				    \item Python
+				    \item \url{https://github.com/vinta/awesome-python}
 			    \end{itemize}
 	    \end{itemize}
     \end{frame}
